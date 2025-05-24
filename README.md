@@ -2,18 +2,37 @@
 
 A plug-and-play .NET package for securely storing and retrieving session data via HTTP using `efetch` and `ethernmyth/secure-session-vault` from docker. Requires zero boilerplate in consuming apps.
 
+![NuGet Version](https://img.shields.io/nuget/v/SecureSessionVault)
+![NuGet Downloads](https://img.shields.io/nuget/dt/SecureSessionVault)
+
 ## Features
 
 - Static access: `SecureSession.GetItem("key")`
 - Uses `efetch` to persist session to remote API
 - Configurable via `appsettings.json`
 
+
+## Installation
+
+Install via NuGet Package Manager:
+
+```bash
+Install-Package SecureSessionVault
+```
+
+Or via .NET CLI:
+
+```bash
+dotnet add package SecureSessionVault
+```
+
+
 ## Important Notes
 
 - This package is designed to work with the `ethernmyth/secure-session-vault` Docker image. You must have this image running to use the package.
 - Follow the instructions below to set up the Docker image and container.
 
-- Run the backend using Docker, the backend is available on docker hub at[Docker Hub](https://hub.docker.com/r/ethernmyth/secure-session-vault):
+- Run the backend using Docker, the backend is available on docker hub at [Docker Hub](https://hub.docker.com/r/ethernmyth/secure-session-vault):
 
 ```bash
 docker run -p 17000:17000 ethernmyth/secure-session-vault:latest
